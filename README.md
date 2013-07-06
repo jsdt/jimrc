@@ -1,0 +1,4 @@
+jimrc
+=====
+
+Vim settings
