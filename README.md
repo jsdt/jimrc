@@ -1,4 +1,4 @@
 jimrc
 =====
 
-Vim settings
+Vim settings and scripts for setup.
