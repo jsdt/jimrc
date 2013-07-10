@@ -15,8 +15,9 @@ execute pathogen#infect()
 " Open nerdtree if vim starts with no files
 autocmd vimenter * if !argc() | NERDTree | endif
 map <C-n> :NERDTreeToggle<CR>
-map <C-p> :CtrlP<CR>
 
+map <C-p> :CtrlP<CR>
+set wildignore+=*.zip,*.swp,*.class,*.pyc,*.o,*.so
 
 " Python settings
 autocmd Filetype python set smartindent
