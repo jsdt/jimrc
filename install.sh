@@ -38,3 +38,11 @@ then
     echo "Error cloning ctrlp"
     exit 1
 fi
+
+git clone https://github.com/Lokaltog/vim-easymotion
+
+if [ $? -ne 0 ]
+then
+    echo "Error cloning easy-motion
+    exit 1
+fi
