@@ -9,6 +9,11 @@ set smartcase
 
 filetype plugin on
 
+if has("autocmd")
+    au BufReadPost * if line("'\"") > 0 && line("'\"") <= line("$")
+        \| exe "normal! g'\"" | endif
+endif
+
 " Comment this line out if pathogen is not installed
 execute pathogen#infect()
 
