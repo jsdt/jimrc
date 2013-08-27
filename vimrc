@@ -25,6 +25,9 @@ map <C-n> :NERDTreeToggle<CR>
 map <C-p> :CtrlP<CR>
 set wildignore+=*.zip,*.swp,*.class,*.pyc,*.o,*.so
 
+set t_Co=256
+set laststatus=2
+
 " Python settings
 autocmd Filetype python set smartindent
 autocmd Filetype python set expandtab
