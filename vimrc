@@ -28,6 +28,8 @@ set wildignore+=*.zip,*.swp,*.class,*.pyc,*.o,*.so
 set t_Co=256
 set laststatus=2
 
+autocmd FileType make set noexpandtab
+
 " Python settings
 autocmd Filetype python set smartindent
 autocmd Filetype python set expandtab
