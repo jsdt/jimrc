@@ -118,5 +118,3 @@ function! MyFoldLevel( lineNumber )
     return '='
 endfunction
 
-autocmd FileType java setlocal foldexpr=MyFoldLevel(v:lnum)
-autocmd FileType java setlocal foldmethod=expr
