@@ -38,8 +38,20 @@ clone() {
     fi
 }
 
-github_dirs=("nerdtree" "ctrlp.vim" "vim-airline" "vim-easymotion" "vim-fugitive")
-github_repos=("scrooloose/nerdtree.git" "kien/ctrlp.vim" "bling/vim-airline" "Lokaltog/vim-easymotion" "tpope/vim-fugitive")
+github_dirs=(
+    #"nerdtree"
+    "ctrlp.vim"
+    "vim-airline"
+    "vim-easymotion"
+    "vim-fugitive"
+    )
+github_repos=(
+    #"scrooloose/nerdtree.git"
+    "kien/ctrlp.vim"
+    "bling/vim-airline"
+    "Lokaltog/vim-easymotion"
+    "tpope/vim-fugitive"
+    )
 
 for index in ${!github_dirs[*]}
 do

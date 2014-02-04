@@ -15,12 +15,12 @@ if has("autocmd")
 endif
 
 " Comment this line out if pathogen is not installed
-execute pathogen#infect()
+" execute pathogen#infect()
 
 " Open nerdtree if vim starts with no files
 " autocmd vimenter * if !argc() | NERDTree | endif
 
-map <C-n> :NERDTreeToggle<CR>
+"map <C-n> :NERDTreeToggle<CR>
 
 map <C-p> :CtrlP<CR>
 set wildignore+=*.zip,*.swp,*.class,*.pyc,*.o,*.so
