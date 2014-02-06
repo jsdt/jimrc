@@ -9,7 +9,7 @@ cp vimrc ~/.vim/plugin/jimrc.vim
 
 #Install pathogen
 mkdir -p ~/.vim/autoload $bundle_dir
-curl -Sso ~/.vim/autoload/pathogen.vim \
+curl --insecure -Sso ~/.vim/autoload/pathogen.vim \
 	https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
 if [ $? -ne 0 ]
