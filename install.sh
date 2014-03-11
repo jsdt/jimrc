@@ -18,6 +18,11 @@ then
     exit 1
 fi
 
+#Install vimproc
+git clone https://github.com/Shougo/vimproc.vim.git $bundle_dir/vimproc.vim
+cd $bundle_dir/vimproc.vim
+make
+
 #TODO this might not be necessary since it is in the plugin
 touch ~/.vimrc
 if ! grep -Fxq "execute pathogen#infect()" ~/.vimrc
@@ -39,18 +44,26 @@ clone() {
 }
 
 github_dirs=(
-    #"nerdtree"
+    "nerdtree"
     "ctrlp.vim"
     "vim-airline"
     "vim-easymotion"
     "vim-fugitive"
+    "vim-surround"
+    "vim-commentary"
+    "vim-unimpaired"
+    "vim-repeat"
     )
 github_repos=(
-    #"scrooloose/nerdtree.git"
+    "scrooloose/nerdtree.git"
     "kien/ctrlp.vim"
     "bling/vim-airline"
     "Lokaltog/vim-easymotion"
     "tpope/vim-fugitive"
+    "tpope/vim-surround"
+    "tpope/vim-commentary"
+    "tpope/vim-unimpaired"
+    "tpope/vim-repeat"
     )
 
 for index in ${!github_dirs[*]}
