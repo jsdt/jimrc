@@ -22,6 +22,12 @@ fi
 git clone https://github.com/Shougo/vimproc.vim.git $bundle_dir/vimproc.vim
 cd $bundle_dir/vimproc.vim
 make
+cd -
+
+#Install Conque
+curl -O https://conque.googlecode.com/files/conque_2.3.vmb
+vim -c 'so %' -c 'q' conque_2.3.vmb
+
 
 #TODO this might not be necessary since it is in the plugin
 touch ~/.vimrc
