@@ -19,9 +19,13 @@ then
 fi
 
 #Install vimproc
-git clone https://github.com/Shougo/vimproc.vim.git $bundle_dir/vimproc.vim
-cd $bundle_dir/vimproc.vim
-make
+if [ ! -d $bundle_dir/vimproc.vim ]; then   
+    git clone https://github.com/Shougo/vimproc.vim.git $bundle_dir/vimproc.vim
+    cd $bundle_dir/vimproc.vim
+    make
+else
+    echo "Directory: vimproc already exists. Skipping..."
+fi
 
 #TODO this might not be necessary since it is in the plugin
 touch ~/.vimrc
