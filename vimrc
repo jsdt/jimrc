@@ -26,6 +26,8 @@ set runtimepath^=~/.vim/bundle/ctrlp.vim
 map <C-p> :CtrlP<CR>
 set wildignore+=*.zip,*.swp,*.class,*.pyc,*.o,*.so
 
+au VimEnter * RainbowParenthesesToggle
+
 set t_Co=256
 set laststatus=2
 
