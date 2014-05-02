@@ -2,6 +2,7 @@
 
 bundle_dir=$HOME/.vim/bundle/
 
+
 echo "Installing bundles to: $bundle_dir"
 
 mkdir -p ~/.vim/plugin
@@ -9,7 +10,7 @@ cp vimrc ~/.vim/plugin/jimrc.vim
 
 #Install pathogen
 mkdir -p ~/.vim/autoload $bundle_dir
-curl --insecure -Sso ~/.vim/autoload/pathogen.vim \
+curl --insecure -LSso ~/.vim/autoload/pathogen.vim \
 	https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
 
 if [ $? -ne 0 ]
@@ -29,7 +30,7 @@ else
 fi
 
 #Install Conque
-curl -O https://conque.googlecode.com/files/conque_2.3.vmb
+curl -LO https://conque.googlecode.com/files/conque_2.3.vmb
 vim -c 'so %' -c 'q' conque_2.3.vmb
 
 #TODO this might not be necessary since it is in the plugin
@@ -48,7 +49,8 @@ clone() {
             exit 1
         fi
     else
-        echo "Directory: ${1} already exists. Skipping..."
+        echo "Directory: ${1} already exists. Looking for updates..."
+        git --git-dir=$bundle_dir${1}/.git --work-tree=$bundle_dir${1} pull
     fi
 }
 
