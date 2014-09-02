@@ -38,7 +38,7 @@ autocmd Filetype python set smartindent
 autocmd Filetype python set expandtab
 autocmd Filetype python set tabstop=2
 autocmd Filetype python set shiftwidth=2
-autocmd Filetype python inoremap # X^H#
+autocmd Filetype python inoremap # X#
 
 " Auto insert closing brace and indent in java
 autocmd FileType java imap { {<C-O>:call WeirdMap()<Enter>6<C-O>:call ResetMap()<Enter>
