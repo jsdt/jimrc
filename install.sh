@@ -1,6 +1,36 @@
 #!/bin/bash
 
+reqs=(
+    "vim"
+    "git"
+    "make"
+    )
+
+for r in "${reqs[@]}"
+do
+    command -v $r > /dev/null
+    if [ $? -ne 0 ]
+    then
+        echo "Missing command: ${r}"
+        exit 1
+    fi
+done
+
+has_curl=1
+command -v curl > /dev/null
+if [ $? -ne 0 ]
+then
+    has_curl=0
+    command -v wget > /dev/null
+    if [ $? -ne 0 ]
+    then
+        echo "Install either curl or wget."
+        exit 1
+    fi
+fi
+
 bundle_dir=$HOME/.vim/bundle/
+
 
 
 echo "Installing bundles to: $bundle_dir"
@@ -10,8 +40,15 @@ cp vimrc ~/.vim/plugin/jimrc.vim
 
 #Install pathogen
 mkdir -p ~/.vim/autoload $bundle_dir
-curl --insecure -LSso ~/.vim/autoload/pathogen.vim \
-	https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+if [ $has_curl -eq 1 ]
+then
+    curl --insecure -LSso ~/.vim/autoload/pathogen.vim \
+        https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+else
+    wget -O ~/.vim/autoload/pathogen.vim \
+        https://raw.github.com/tpope/vim-pathogen/master/autoload/pathogen.vim
+fi
+    
 
 if [ $? -ne 0 ]
 then
@@ -30,7 +67,19 @@ else
 fi
 
 #Install Conque
-curl -LO https://conque.googlecode.com/files/conque_2.3.vmb
+if [ $has_curl -eq 1 ]
+then
+    curl -LO https://conque.googlecode.com/files/conque_2.3.vmb
+else
+    wget https://conque.googlecode.com/files/conque_2.3.vmb
+fi
+
+if [ $? -ne 0 ]
+then
+    echo "Error downloading conque"
+    exit 1
+fi
+
 vim -c 'so %' -c 'q' conque_2.3.vmb
 
 #TODO this might not be necessary since it is in the plugin

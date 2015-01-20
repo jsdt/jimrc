@@ -36,8 +36,8 @@ autocmd FileType make set noexpandtab
 " Python settings
 autocmd Filetype python set smartindent
 autocmd Filetype python set expandtab
-autocmd Filetype python set tabstop=2
-autocmd Filetype python set shiftwidth=2
+autocmd Filetype python set tabstop=4
+autocmd Filetype python set shiftwidth=4
 autocmd Filetype python inoremap # X#
 
 " Auto insert closing brace and indent in java
