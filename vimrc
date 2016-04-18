@@ -122,3 +122,11 @@ function! MyFoldLevel( lineNumber )
     return '='
 endfunction
 
+
+" Bindings for go. Some of these will not work without running
+" :GoInstallBinaries
+au FileType go nmap <leader>r <Plug>(go-run)
+au FileType go nmap <leader>b <Plug>(go-build)
+au FileType go nmap <leader>t <Plug>(go-test)
+au FileType go nmap <Leader>gd <Plug>(go-doc)
+au FileType go nmap <Leader>ds <Plug>(go-def-split)

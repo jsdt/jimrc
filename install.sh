@@ -115,6 +115,7 @@ github_dirs=(
     "vim-repeat"
     "rainbow_parentheses.vim"
     "vim-scala"
+    "vim-go"
     )
 github_repos=(
     "scrooloose/nerdtree.git"
@@ -128,6 +129,7 @@ github_repos=(
     "tpope/vim-repeat"
     "kien/rainbow_parentheses.vim"
     "derekwyatt/vim-scala"
+    "fatih/vim-go"
     )
 
 for index in ${!github_dirs[*]}
