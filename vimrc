@@ -130,3 +130,6 @@ au FileType go nmap <leader>b <Plug>(go-build)
 au FileType go nmap <leader>t <Plug>(go-test)
 au FileType go nmap <Leader>gd <Plug>(go-doc)
 au FileType go nmap <Leader>ds <Plug>(go-def-split)
+
+" Disable beeping.
+set noerrorbells visualbell t_vb=
